@@ -1,0 +1,14 @@
+{
+    "name": "nezaniel\/connector",
+    "type": "typo3-flow-package",
+    "description": "SingleSignOn management for TYPO3.Neos (neos.typo3.org)",
+    "require": {
+        "typo3\/flow": "*",
+        "flowpack\/singlesignon-client": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Nezaniel\\Connector": "Classes"
+        }
+    }
+}

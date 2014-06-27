@@ -1,0 +1,12 @@
+
+TYPO3:
+  Neos:
+    modules:
+      administration:
+        submodules:
+          nezaniel-connector-ssoclients:
+            label: 'SSO Client Management'
+            controller: '\Nezaniel\Connector\Controller\Module\Administration\SsoClientController'
+            description: 'This module contains the overview of all registered SSO clients and the capabilities to create new or edit or delete existing SSO clients.'
+            icon: 'icon-lock'
+            resource: 'Nezaniel_Connector_Backend_Module_Administration_SsoClients'

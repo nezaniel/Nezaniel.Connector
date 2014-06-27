@@ -1,0 +1,10 @@
+
+resources:
+  methods:
+    Nezaniel_Connector_Backend_Module_Administration_SsoClients: 'method(Nezaniel\Connector\Controller\Module\Administration\SsoClientController->(index|new|create|edit|update|delete|)Action())'
+
+acls:
+
+  TYPO3.Neos:Administrator:
+    methods:
+      Nezaniel_Connector_Backend_Module_Administration_SsoClients: GRANT

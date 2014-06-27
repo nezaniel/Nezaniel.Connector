@@ -1,0 +1,66 @@
+<f:layout name="BackendSubModule"/>
+
+<f:section name="content">
+	<table class="neos-table">
+		<thead>
+		<tr>
+			<th>Service Base URI</th>
+			<th>Public Key Fingerprint</th>
+			<th>&nbsp;</th>
+		</tr>
+		</thead>
+		<tbody>
+		<f:for each="{clients}" key="uuid" as="client">
+			<tr>
+				<td>
+					<i class="icon-lock icon-white"></i>
+					{client.serviceBaseUri}
+				</td>
+				<td>
+					{client.publicKeyFingerprint}
+				</td>
+				<td class="neos-action">
+					<div class="neos-pull-right">
+						<f:link.action action="update" arguments="{client: client}" class="neos-btn neos-button" title="Click to edit">
+							<i class="icon-pencil icon-white"></i>
+						</f:link.action>
+
+						<button class="neos-btn neos-btn-danger neos-button" title="Click to delete" data-toggle="modal" href="#{uuid}">
+							<i class="icon-trash icon-white"></i>
+						</button>
+						<div class="neos-hide" id="{uuid}">
+							<div class="neos-modal">
+								<div class="neos-modal-header">
+									<button type="button" class="neos-close neos-button" data-dismiss="modal"></button>
+									<div class="neos-header">Are you sure you want to delete client "{client.serviceBaseUri}"?</div>
+									<div>
+										<div class="neos-subheader">
+											This operation cannot be undone.
+										</div>
+									</div>
+								</div>
+								<div class="neos-modal-footer">
+									<a href="#" class="neos-btn neos-button" data-dismiss="modal">Cancel</a>
+									<f:form action="delete" arguments="{client: client}" class="neos-inline">
+										<button type="submit" class="neos-btn neos-btn-danger neos-button"
+												title="Delete">
+											<i class="icon-trash icon-white"></i>
+											Delete
+										</button>
+									</f:form>
+								</div>
+							</div>
+							<div class="neos-modal-backdrop neos-in"></div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</f:for>
+		</tbody>
+	</table>
+	<div class="neos-footer">
+		<f:link.action action="create" class="neos-button neos-button-success" title="Click to add a new client">Add new
+			client
+		</f:link.action>
+	</div>
+</f:section>
